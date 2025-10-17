@@ -1,13 +1,20 @@
 document.querySelectorAll('.course-card').forEach(card => {
-    card.addEventListener('click', () => {
-        const title = card.querySelector('.course-title').innerText.trim();
-        const targetLink = card.getAttribute('data-link'); // Проверяем, есть ли прямая ссылка для перехода
+    // Добавляем обработчик события 'click'
+    card.addEventListener('click', (event) => {
         
+        // 1. Получаем ссылку для перехода из атрибута data-link
+        const targetLink = card.getAttribute('data-link'); 
+        
+        // 2. Получаем заголовок для сообщения (на случай, если ссылки нет)
+        const titleElement = card.querySelector('.course-title');
+        const title = titleElement ? titleElement.innerText.trim() : 'Этот раздел';
+
         if (targetLink) {
-            // Если data-link есть (например, "phishing.html"), переходим по ссылке
+            // Если атрибут data-link найден, выполняем переход
             window.location.href = targetLink;
         } else {
-            // ИСПРАВЛЕНИЕ: Используются обратные кавычки (`) вместо скобок для шаблонной строки
+            // Если data-link не найден, выводим сообщение о разработке
+            // Используется шаблонный литерал с обратными кавычками (`)
             alert(Раздел "${title}" пока в разработке.);
         }
     });
