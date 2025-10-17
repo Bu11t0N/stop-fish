@@ -6,11 +6,7 @@
     <title>Stop Fish — Защити себя от мошенников</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #ccecff;
@@ -29,33 +25,12 @@
             justify-content: space-between;
             align-items: center;
         }
-        .branding {
-            display: flex;
-            align-items: center;
-        }
-        .logo {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            margin-right: 10px;
-        }
-        .site-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #ccc;
-        }
+        .branding { display: flex; align-items: center; }
+        .logo { width: 50px; height: 50px; object-fit: contain; margin-right: 10px; }
+        .site-name { font-size: 1.5rem; font-weight: bold; }
+        nav { display: flex; gap: 20px; }
+        nav a { color: white; text-decoration: none; font-size: 1rem; transition: color 0.3s ease; }
+        nav a:hover { color: #ccc; }
         main {
             width: 100%;
             max-width: 1200px;
@@ -73,28 +48,11 @@
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-        .course-card:hover {
-            transform: scale(1.05);
-        }
-        .course-title {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .course-description {
-            font-size: 1rem;
-            color: #666;
-        }
-        footer {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            color: #666;
-            text-align: center;
-        }
-        small {
-            display: block;
-            font-size: inherit;
-            line-height: 1.5;
-        }
+        .course-card:hover { transform: scale(1.05); }
+        .course-title { font-size: 1.5rem; margin-bottom: 10px; }
+        .course-description { font-size: 1rem; color: #666; }
+        footer { margin-top: 20px; font-size: 1.1rem; color: #666; text-align: center; }
+        small { display: block; font-size: inherit; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -105,4 +63,58 @@
         </div>
         <nav>
             <a href="#courses">Курсы</a>
-            <a href="#about">
+            <a href="#about">О проекте</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Карточки -->
+        <article class="course-card" data-target="#phishing-module">
+            <h2 class="course-title">Фишинг</h2>
+            <p class="course-description">Узнайте, как обезопасить себя от подделанных сайтов и писем.</p>
+        </article>
+
+        <article class="course-card" data-target="#phone-scams-module">
+            <h2 class="course-title">Телефонные мошенники</h2>
+            <p class="course-description">Изучите методы защиты от звонков злоумышленников.</p>
+        </article>
+
+        <article class="course-card" data-target="#password-security-module">
+            <h2 class="course-title">Небезопасные пароли</h2>
+            <p class="course-description">Научитесь создавать надежные пароли и управлять ими эффективно.</p>
+        </article>
+
+        <article class="course-card" data-target="#child-protection-module">
+            <h2 class="course-title">Обучение детей</h2>
+            <p class="course-description">Помощь родителям в обучении ребенка безопасному поведению в сети.</p>
+        </article>
+
+        <article class="course-card" data-target="#senior-learning-module">
+            <h2 class="course-title">Обучение пенсионеров</h2>
+            <p class="course-description">Специальные курсы для старшего поколения по защите от мошенничества.</p>
+        </article>
+
+        <article class="course-card" data-target="#business-security-module">
+            <h2 class="course-title">Защита бизнеса</h2>
+            <p class="course-description">Избегайте рисков и защитите свою компанию от кибератак и финансовых потерь.</p>
+        </article>
+
+        <article class="course-card" data-target="#victim-assistance-module">
+            <h2 class="course-title">Что делать, если стал жертвой</h2>
+            <p class="course-description">Получите инструкции и рекомендации, как действовать, если вы столкнулись с мошенничеством.</p>
+        </article>
+
+        <article class="course-card" data-target="#savings-protection-module">
+            <h2 class="course-title">Защитите свои сбережения</h2>
+            <p class="course-description">Узнайте, как защитить свои финансы и банковские счета от кражи и мошеннических схем.</p>
+        </article>
+    </main>
+
+    <footer>
+        <small>© Stop Fish | Ваш проводник в мире цифровой безопасности</small>
+    </footer>
+
+    <!-- подключаем скрипт с defer чтобы DOM был готов -->
+    <script src="script.js" defer></script>
+</body>
+</html>
