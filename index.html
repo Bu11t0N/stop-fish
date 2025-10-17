@@ -6,6 +6,7 @@
     <title>Stop Fish — Защити себя от мошенников</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* CSS здесь остался прежним */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Inter', sans-serif;
@@ -68,52 +69,44 @@
     </header>
 
     <main>
-        <article class="course-card" data-target="#phishing-module" data-link="phishing.html"> 
+        <article class="course-card" data-link="phishing.html"> 
             <h2 class="course-title">Фишинг</h2>
             <p class="course-description">Узнайте, как обезопасить себя от подделанных сайтов и писем.</p>
-            <a href="phishing.html">Подробнее...</a>
         </article>
 
-        <article class="course-card" data-target="#phone-scams-module">
+        <article class="course-card" data-link="phone-scams.html">
             <h2 class="course-title">Телефонные мошенники</h2>
             <p class="course-description">Изучите методы защиты от звонков злоумышленников.</p>
-            <a href="phone-scams.html">Подробнее...</a>
         </article>
 
-        <article class="course-card" data-target="#password-security-module">
-            <h2 class="course-title">Небезопасные пароли</h2>
-            <p class="course-description">Научитесь создавать надежные пароли и управлять ими эффективно.</p>
-            <a href="password-security.html">Подробнее...</a>
+        <article class="course-card" data-link="password-security.html">
+            <h2 class="course-title">Пароли</h2>
+            <p class="course-description">Создавайте надёжные пароли и управляйте ими эффективно.</p>
         </article>
 
-        <article class="course-card" data-target="#child-protection-module">
-            <h2 class="course-title">Обучение детей</h2>
-            <p class="course-description">Помощь родителям в обучении ребенка безопасному поведению в сети.</p>
-            <a href="child-protection.html">Подробнее...</a>
+        <article class="course-card" data-link="child-protection.html">
+            <h2 class="course-title">Безопасность детей</h2>
+            <p class="course-description">Помощь родителям в обучении ребёнка безопасному поведению онлайн.</p>
         </article>
 
-        <article class="course-card" data-target="#senior-learning-module">
-            <h2 class="course-title">Обучение пенсионеров</h2>
-            <p class="course-description">Специальные курсы для старшего поколения по защите от мошенничества.</p>
-            <a href="senior-learning.html">Подробнее...</a>
+        <article class="course-card" data-link="senior-learning.html">
+            <h2 class="course-title">Старшее поколение</h2>
+            <p class="course-description">Специальные курсы для пожилых людей по борьбе с мошенниками.</p>
         </article>
 
-        <article class="course-card" data-target="#business-security-module">
-            <h2 class="course-title">Защита бизнеса</h2>
-            <p class="course-description">Избегайте рисков и защитите свою компанию от кибератак и финансовых потерь.</p>
-            <a href="business-security.html">Подробнее...</a>
+        <article class="course-card" data-link="business-security.html">
+            <h2 class="course-title">Бизнес-защита</h2>
+            <p class="course-description">Избегайте рисков и защищайте вашу компанию от угроз.</p>
         </article>
 
-        <article class="course-card" data-target="#victim-assistance-module">
-            <h2 class="course-title">Что делать, если стал жертвой</h2>
-            <p class="course-description">Получите инструкции и рекомендации, как действовать, если вы столкнулись с мошенничеством.</p>
-            <a href="victim-assistance.html">Подробнее...</a>
+        <article class="course-card" data-link="victim-assistance.html">
+            <h2 class="course-title">Помощь жертвам</h2>
+            <p class="course-description">Рекомендации и инструкции, если вы стали жертвой мошенника.</p>
         </article>
 
-        <article class="course-card" data-target="#savings-protection-module">
-            <h2 class="course-title">Защитите свои сбережения</h2>
-            <p class="course-description">Узнайте, как защитить свои финансы и банковские счета от кражи и мошеннических схем.</p>
-            <a href="savings-protection.html">Подробнее...</a>
+        <article class="course-card" data-link="savings-protection.html">
+            <h2 class="course-title">Финансовая безопасность</h2>
+            <p class="course-description">Защитите ваши деньги и банковские счета от кражи и мошенничества.</p>
         </article>
     </main>
 
@@ -121,9 +114,26 @@
         <small>© Stop Fish | Ваш проводник в мире цифровой безопасности</small>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script>
+        // Скрипт для обработки кликов по карточкам
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.addEventListener('click', () => {
+                // Извлекаем целевую страницу из атрибута data-link
+                let targetPage = card.dataset.link;
+                
+                // Проверяем наличие ссылки
+                if (!targetPage || !targetPage.includes(".html")) {
+                    return alert("Данный раздел находится в разработке.");
+                }
+                
+                // Переход на целевую страницу
+                location.href = targetPage;
+            });
+        });
+    </script>
 </body>
 </html>
+
 
 
 
