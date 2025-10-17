@@ -1,30 +1,12 @@
-// script.js
-console.log('script.js загружен');
-
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.course-card');
-  console.log('Найдено карточек:', cards.length);
-
-  if (!cards.length) {
-    console.warn('Элементы .course-card не найдены в DOM.');
-  }
-
-  cards.forEach(card => {
-    card.style.cursor = 'pointer';
-
+document.querySelectorAll('.course-card').forEach(card => {
     card.addEventListener('click', () => {
-      const titleEl = card.querySelector('.course-title');
-      const title = titleEl ? titleEl.innerText.trim() : '';
-      console.log('Клик по карточке:', title);
+        const title = card.querySelector('.course-title').innerText.trim();
 
-      const titleLower = title.toLowerCase();
-
-      if (titleLower.includes('фишинг')) {
-        console.log('Перенаправление на phishing.html');
-        window.location.href = 'phishing.html';
-      } else {
-        alert(Раздел "${title}" пока в разработке.);
-      }
+        // Проверяем, какая карточка нажата
+        if (title === "Фишинг") {
+            window.location.href = "phishing.html"; // переход на страницу фишинга
+        } else {
+            alert(Раздел "${title}" пока в разработке.);
+        }
     });
-  });
 });
